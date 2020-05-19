@@ -12,7 +12,7 @@ html {
   width: 100%;
   height: 100%;
   height: 100vh;
-  height: calc( var(--vh, 1vh) * 100);
+  height: calc(var(--vh, 1vh) * 100);
   overflow: hidden; }
 
 body {
@@ -1031,9 +1031,9 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  background-image: url("./../img/pasted-from-clipboard.png"); }
 
 .reveal .slide-background.stack {
   display: block; }
@@ -1604,3 +1604,27 @@ body {
 
 .zoomed .reveal .roll span:after {
   visibility: hidden; }
+
+.slide--image {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+
+.g-mb--80 {
+  margin-bottom: 80px !important; }
+
+.slide--block {
+  width: 80%;
+  color: black;
+  margin-left: -15%;
+  margin-top: -5%; }
+  .slide--block .features--list {
+    display: grid;
+    grid-auto-flow: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .slide--block .features--list span {
+      margin-left: 50px !important; }
+    .slide--block .features--list ul {
+      list-style-type: none !important; }
