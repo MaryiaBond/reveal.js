@@ -25,11 +25,13 @@ body {
   position: relative;
   line-height: 1;
   margin: 0;
-
+  font-family: 'Montserrat', sans-serif;
   background-color: #fff;
   color: #000;
 }
-
+p, h1, h2, h3, h4, a, span {
+  font-family: 'Montserrat', sans-serif !important;
+}
 
 /*********************************************
  * VIEW FRAGMENTS
@@ -563,7 +565,7 @@ $controlsArrowAngleActive: 36deg;
   right: 8px;
   bottom: 8px;
   z-index: 31;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 12px;
   line-height: 1;
   color: #fff;
@@ -1410,7 +1412,7 @@ $controlsArrowAngleActive: 36deg;
 .reveal.rtl .slides h5,
 .reveal.rtl .slides h6 {
   direction: rtl;
-  font-family: sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .reveal.rtl pre,
@@ -1749,7 +1751,7 @@ $notesWidthPercent: 25%;
   overflow: auto;
   box-sizing: border-box;
   text-align: left;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   -webkit-overflow-scrolling: touch;
 
   .notes-placeholder {
@@ -1853,14 +1855,61 @@ $notesWidthPercent: 25%;
 .g-mb--80 {
   margin-bottom: 80px !important;
 }
+.g-mb--20 {
+  margin-bottom: 20px !important;
+}
+.text-center {
+  text-align: center !important;
+}
 .slide--block {
-  h1, h3, h2 {
-
+  .small-img {
+    max-width: 60% !important;
   }
-  width: 80%;
+  .list--custom--inline-numbers {
+    li {
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: flex-start;
+      align-items: center;
+      column-gap: 20px;
+    }
+  }
+  .list--custom {
+    span {
+      font-size: 20px !important;
+    }
+  }
+  span {
+    font-weight: 100;
+  }
+  img {
+    border: none !important;
+  }
+  .capitalize {
+    text-transform: capitalize !important;
+  }
+  p {
+    font-size: 28px !important;
+  }
+  p.small-p,  span.small-p{
+    font-size: 16px !important;
+  }
+  b.orange-color {
+    color: #D26D0F !important;
+  }
+  b.blue-color {
+    color: #0493C0 !important;
+  }
+  b.red-color {
+    color: #c30b2e;
+  }
+  b.green-color {
+    color: #42b683;
+  }
+  width: 70%;
   color: black;
-  margin-left: -15%;
-  margin-top: -5%;
+  margin-left: -6%;
+  margin-top: 0;
   .features--list{
     span {
       margin-left: 50px !important;
@@ -1868,8 +1917,9 @@ $notesWidthPercent: 25%;
     display: grid;
     grid-auto-flow: column;
     align-items: center;
-    ul {
-      list-style-type: none !important;
-    }
+    
+  }
+  ul {
+    list-style-type: none !important;
   }
 }

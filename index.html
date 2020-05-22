@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet">
     <title>reveal.js</title>
 
     <link rel="stylesheet" href="css/reset.css">
@@ -23,43 +23,431 @@
     <div class="slides">
 
         <section>
+            <section>
             <div class="slide--block">
                 <h1 class="g-mb--80">React</h1>
                 <h3 class="g-mb--80">JavaSript Library for building
 
                     <b>user interfaces</b></h3>
-                <p><b>React</b> was <b>created</b> by Jordan Walke, a software engineer at Facebook</p>
+                <!-- <p><b>React</b> was <b>created</b> by Jordan Walke, a software engineer at Facebook</p> -->
+                <p>In the 2010 developers at Facebook began to face challenges it the organization and management of their JS code. 
+                    In response, the software engineer  Jordan Walke wrote React, inspired by Facebook PHP framework XHP. </p>
             </div>
 
         </section>
+
         <section>
+                <div class="slide--block">
+                    <h3 class="g-mb--80">& it become popular</h3>
+                    <div>
+                        <div>    <p>Take a look at npm downloads</p></div> <br>
+                        <p class="small-p">Here we can see, that duiring the last year React downloads more than others</p>
+                        <img src="./img/npn.png" alt="">
+                    </div>
+                </div>
+            </section>
+            <section>
+                    <div class="slide--block">
+                        <h4 class="">how the react differs from other frameworks?</h4>
+                        <div>
+                            <div>    <p class="small-p">It focused solely on the UI rendering</p></div> <br>
+                            <img src="./img/xAngular-vs-React-vs-Vue.png" alt="">
+                        </div>
+                    </div>
+                </section>
+                <section>
+                        <div class="slide--block">
+                            <!-- <h4 class="">how the react differs from other frameworks?</h4> -->
+                            <div>
+                                <div>    <p class="small-p">
+                                    To do this, React developers used a "declarative" 
+                                    approach to programming, which means abstractness that allows developers 
+                                    to focus on describing what the state of the user interface should be.
+                                    <br> <br>
+                                        With the rise of React & similar frameworks, we have seen a 
+                                        shift in the way that developers are writing UI’s. 
+                                        These frameworks provide a means to manage the state of a UI at the component level. 
+                                        <br> <br> <b>This become cornerstone of front-end development</b> </p></div> <br>
+                                <img class="small-img" src="./img/3255469.jpg" alt="">
+                            </div>
+                        </div>
+                    </section>
+            <section>
+                <div class="slide--block">
+                    <h1 class="g-mb--80">What React Does</h1>
+                    <div class="features--list">
+                        <h2>CODE <span>{</span></h2>
+                        <ul>
+                            <li>Maintainable</li>
+    
+                            <li>Manageable</li>
+    
+                            <li>Reusable</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="slide--block">
+                    <p>by splitting into</p>
+                    <h1 class="g-mb--80">Components</h1>
+                    <pre><code data-trim data-noescape>
+                        class Welcome extends React.Component {
+                          render() {
+                            return &lt;h1&gt;Hello, {this.props.name}&lt;/h1&gt;
+                           }
+                         }
+                    </code></pre>
+                </div>
+            </section>
+            <section>
+                    <div class="slide--block">
+                            <p>Every react application has at least one Root</p>
+                            <p class = 'small-p'>This root represent our application and consist of many reusable components
+                                   <br> So react it's a tree of isolated, reusable & independet parts</p>
+                                    <img src="./img/scheme1.png" alt="">
+                        </div>
+            </section>
+            <section>
+                    <div class="slide--block">
+                            <h3 class="">wich you sompose to build comlex user interface</h3>
+                            <img src="./img/scheme2.png" alt="">
+                        </div>
+            </section>
+            <section>
+                    <div class="slide--block">
+                            <p> each component is a piece of application & implemented like a JS Class or function</p>
+                                <ul>
+                                    <li>
+                                        <span class="small-p">Class components use <b>state and render</b> methods for data reporting </span>
+                                    </li>
+                                    <li>
+                                            <span class="small-p">Functional components use <b>Hooks</b> to do the same</span>
+                                            <p class = 'small-p'>Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class</p>
+                                        </li>
+                                </ul>
+                                    <pre><code data-trim data-noescape>
+                                            class Human extends React.Component {
+                                                constructor(props) {
+                                                  super(props);
+                                                  this.state = {name: "Jhone"};
+                                                }
+                                                render() {
+                                                  return (
+                                                    &lt;div&gt;
+                                                      &lt;h1&gt;{this.state.name}&lt;/h1&gt;
+                                                    &lt;/div&gt;
+                                                  );
+                                                }
+                                              }
+                                        </code></pre>
+                                        <p class = 'small-p'>Class Component</p>
+                        </div>
+            </section>
+            <section>
+                    <div class="slide--block">
+                            <p class="g-mb--80"><b>What is actually state is?</b> <br><br><span>It's a data that we want to display when the component is render
+                                    & the render method is responsible for</span> <br>describing what the UI should look like</p>
+                                    <pre><code data-trim data-noescape>
+                                            class Human extends React.Component {
+                                                constructor(props) {
+                                                  super(props);
+                                                  this.state = {name: "Jhone"};
+                                                }
+                                                render() {
+                                                  return (
+                                                    &lt;div&gt;
+                                                      &lt;h1&gt;{this.state.name}&lt;/h1&gt;
+                                                    &lt;/div&gt;
+                                                  );
+                                                }
+                                              }
+                                        </code></pre>
+                                        <p class = 'small-p'>Class Component</p>
+                        </div>
+            </section>
+            <section>
+                    <div class="slide--block">
+                            <p class="g-mb--80">When we change the state of component - we get new React element (or virtual DOM object)</p>
+                            <img src="./img/Desktop6.png" alt="">
+                        </div>
+            </section>
+
+            <section>
+                    <div class="slide--block">
+                            <p class="g-mb--80">In React, for every <b class="blue-color">DOM object</b> exist <br><b class="orange-color">Virtual Dom object</b><br><span>as a lightweight copy representation.</span></p>
+                            <img src="./img/Desktop3.png" alt="">
+                        </div>
+            </section>
+            <section>
+                    <div class="slide--block">
+                            <h3 class="g-mb--80">That how it works:</h3>
+                                <p>
+                                    The entire <b class="orange-color">Virtual Dom </b> gets updated.
+                                </p>
+                            
+                            <img src="./img/Desktop4.png" alt="">
+                        </div>
+            </section>
+            <section>
+                    <div class="slide--block">
+                                <p>
+                                        & compares to what it looked like before you updated it
+                                        <br>React figures out which objects have changed
+
+                                        <br> <span>And only this changed object get updated on the real DOM</span> 
+                                </p>
+                            <img src="./img/Desktop5.png" alt="">
+                        </div>
+            </section>
+            <section>
+                    <div class="slide--block">
+                                <p>
+                                    <span>& after all this steps, changes on the real DOM cause the screen to change</span> 
+                                </p>
+                            <img src="./img/Desktop7.png" alt="">
+                        </div>
+            </section>
+        </section>
+        <section>
+                <section>
             <div class="slide--block">
-                <h1 class="g-mb--80">What React Does</h1>
-                <div class="features--list">
-                    <h2>CODE <span>{</span></h2>
-                    <ul>
-                        <li>Maintainable</li>
-
-                        <li>Manageable</li>
-
-                        <li>Reusable</li>
+                <h1>Lifecycle of Components</h1>
+            </div>
+                </section>
+        <section>
+                <div class="slide--block">
+                    <p>Each component in React has a  <b>lifecycle</b> which you can monitor and manipulate during its three main phases.</p>
+                    <ul class="text-center">
+                            <p  class="g-mb--20"><b>The three phases are: </b></p>
+                            
+                            <li><p class = 'small-p'>Mounting</p></li> 
+                            <li><p class = 'small-p'>Updating</p></li>
+                            <li><p class = 'small-p'>Unmounting</p></li>
                     </ul>
                 </div>
-            </div>
+            </section>
+            <section>
+                    <div class="slide--block">
+                        <p>Mounting means putting elements into the DOM</p>
+                        <img src="./img/Desktop8.png" alt="">
+                    </div>
+                </section>
+            <section>
+                    <div class="slide--block">
+                        <!-- <p>Mounting means putting elements into the DOM</p> -->
+                        <p class = 'small-p'>
+                                <p  class="g-mb--20"><b>React has four built-in Mounting-phase methods:</b></p>
+                                <br> <span class = 'small-p'>for initializing local state & binding event handler used <b>constructor()</b>  method
+
+                                       <b> getDerivedStateFromProps()</b> exists for rare use cases where the state depends on changes in props over time
+                                        
+                                       <br>When called <b> render()</b>, it should examine this.props and this.state and return React Elements
+                                        <br> <b> componentDidMount() </b> call in component immediately after mounting. It's a good place to create API queries
+                                        </span> 
+                               
+                        </p>
+                    </div>
+                </section>
+            <section>
+                    <div class="slide--block">
+                        <p>Updating</p>
+                        <ul class="text-center">
+                                <p  class="g-mb--20">The next phase in the lifecycle is when a <b>component is updated</b>
+                                <br>Component can be updated whenever there is a 
+                                </p>
+                                <li><p class = 'small-p'>state</p></li> 
+                                <li><p class = 'small-p'>or props</p></li>
+                                <p><b>change</b> in the component's</p>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                        <div class="slide--block">
+                            <!-- <p>Mounting means putting elements into the DOM</p> -->
+                            <p class = 'small-p'>
+                                    <p  class="g-mb--20"><b>And here is five built-in methods that gets called, in this order, when a component is updated:</b></p>
+                                    <br> <span class = 'small-p'>getDerivedStateFromProps()</span> 
+                                    <br> <span class = 'small-p'>shouldComponentUpdate()</span> 
+                                    <br> <span class = 'small-p'>render()</span> 
+                                    <br> <span class = 'small-p'>getSnapshotBeforeUpdate()</span>
+                                    <br> <span class = 'small-p'>componentDidUpdate()</span>
+
+                            </p>
+                        </div>
+                    </section>
+
+               
+                <section>
+                        <div class="slide--block">
+                            <!-- <p>Mounting means putting elements into the DOM</p> -->
+                            <p class = 'small-p'>
+                                    <p  class="g-mb--20"><b>The most popular method here it's componentDidUpdate()</b></p>
+                                    <p class="small-p">Used to implement the functionality based on comparing previous and current props</p>
+                                    <pre><code data-trim data-noescape>
+                                            componentDidUpdate(prevProps) {
+                                                if (this.props.ID !== prevProps.ID) {
+                                                  this.fetchData(this.props.ID);
+                                                }
+                                              }
+                                        </code></pre>
+
+                            </p>
+                        </div>
+                    </section>
+                    <section>
+                            <div class="slide--block">
+                                <p>Unmounting</p>
+                                <ul class="text-center">
+                                        <p  class="g-mb--20">The next phase in the lifecycle is when a component is removed from the DOM, or <b>unmounting as React likes to call it</b>
+                                        </p>
+                                        <li><p class = 'small-p'>This phase has only one method: </p></li> 
+                                        <li><p class = 'small-p'>componentWillUnmount()</p></li>
+                                        <p>This method performs the necessary reset: cancel all timers, network requests and subscriptions created in <b>componentDidMount()</b></p>
+                                </ul>
+                            </div>
+                    </section>
         </section>
         <section>
-            <div class="slide--block">
-                <p>by splitting into</p>
-                <h1 class="g-mb--80">Components</h1>
-                <pre><code data-trim data-noescape>
-					class Welcome extends React.Component {
-					  render() {
-					    return &lt;h1&gt;Hello, {this.props.name}	&lt;/h1&gt;
-					   }
-					 }
-				</code></pre>
-            </div>
-        </section>
+            <section>
+                <div class="slide--block">
+                    <p>Beside the phases, components use</p>
+                    <h1 class="g-mb--80">JSX</h1>
+                    <pre><code data-trim data-noescape>
+                        class Welcome extends React.Component {
+                          render() {
+                            return &lt;HellowWorld name={this.props.name} /&gt;
+                           }
+                         }
+                    </code></pre>
+                </div>
+            </section>
+            <section>
+                    <div class="slide--block">
+                            <h1 class="g-mb--80">What is JSX?</h1>
+                            <ul>
+                                    <li><span>JSX stands for JavaScript XML</span></JSX></li>
+
+                                    <li><span>JSX allows us to <b>write</b> HTML in React</span></li>
+                                    
+                                    <li><span>JSX makes it easier <b>to add</b> HTML in React</span></li>
+                            </ul>
+                        </div>
+            </section>
+            <section>
+                    <div class="slide--block">
+                            <p>Fundamentally JSX is syntactic-sugar for the</p>
+                            <h4 class="g-mb--80 capitalize">React.createElement syntax</h4>
+                        <p><span> 
+                            It allows us to define the UI using <b> HTML elements </b> in the DOM instead of doing so with the createElement function</span></p>
+                    </div>
+                </section>
+            <section>
+                    <div class="slide--block">
+                            <h2 class="g-mb--80">Here's what it looks like</h2>
+                            <img src="./img/dont-look-like.png" alt="">
+                            <p>It look Like usual HTML code</p>
+                        </div>
+            </section>
+            <section>
+                    <div class="slide--block">
+                            <h3 class="g-mb--80">& what it doesn't look like</h3>
+                            <img src="./img/look-like.png" alt="">
+                            <p>It's just a functions and arguments and harder to comprehend than regular HTML</p>
+                        </div>
+            </section>
+            </section>
+            <section>
+                <section>
+                    <div class="slide--block">
+                            <h3 class="g-mb--80">So what we end up?</h3>
+
+                            <ul class="list--custom list--custom--inline-numbers">
+                                    <li> <h4>1</h4> <span>React is a JavaScript <b>library</b> for building user interfaces </span></li>
+                                    <li> <h4>2</h4> <span>It allows us to create reusable UI<b> components</b> </span></li>
+                                    <li> <h4>3</h4> <span>And create <b>Virtual Dom</b> to boost application speed</span></li>
+                                    <li> <h4>4</h4> <span>Transfer data to these components by <b>state</b></span></li>
+                                    <li> <h4>5</h4> <span>And use this state to manipulate application</span></li>
+                            </ul>
+                        </div>
+                    </section>
+            <section>
+                    <div class="slide--block">
+                        <p>But if you still have a question</p>
+                            <h3 class="g-mb--80">Which Javascript framework or library offers the best performance?</h3>
+                            <span> Let's see how this others work</span>
+                        </div>
+            </section>
+
+            <section>
+                    <div class="slide--block">
+                        
+                            <h3 class="g-mb--80">Angular</h3>
+                            <span>Released in 2010 by Google</span>
+                            <p>While React just was in the invention phase, Angular has already released the first version</p>
+                        </div>
+            </section>
+            <section>
+                    <div class="slide--block">
+                        
+                            <p class="small-p">This framework of Javascript uses <b class="blue-color">real DOM</b>. <br> <br>It is extremely hard to handle
+                                    because if you lose the flow, you will have to go deep into the codes to
+                                    actually find out the issue. It is time-consuming, and risky to attract
+                                    a lot of bugs.
+                                    <br><br>
+                                    The <b class="blue-color">real DOM</b> use by Angular affects its performance and ability to make
+                                    dynamic software application. <br><br> Furthermore, it results in the slow
+                                    performance of this Javascript framework.</p>
+                        </div>
+            </section>
+            <section>
+                    <div class="slide--block">
+                        
+                            <p class="small-p">But <b class="red-color">Angular</b> rather a platform than a framework <br> <br>
+                                Because it has so many features built-in like Routing or state management<br> <br><br>
+                                And at the same time <b class="blue-color"> React</b> needs support from other libraries for this tasks
+                            </p>
+                        </div>
+            </section>
+            <section>
+                    <div class="slide--block">
+                        <h3>& What about <b class="green-color">Vue</b></h3>
+                            <p class="small-p">It is the smallest of other frameworks and libraries. 
+                                Hence it's extremely suitable for the development
+                                    of lightweight applications. 
+                                    <br> <br>
+                                    <b>Unlike <b class="red-color">Angular</b> or <b class="blue-color"> React</b>, <b class="green-color">Vue</b> is not backed by any top-level corporate. 
+                                    <br> <br>
+                                   </b>
+                                            <br> <br>
+                                    <span>
+                                            This should have resulted in lesser popularity but in reality, this
+                                            Javascript framework gained amazing popularity in the open source
+                                            community.</span>
+                            </p>
+                        </div>
+            </section>
+
+            <section>
+                    <div class="slide--block">
+                        <h3>Conclusion</h3>
+                            <p class=><b class="green-color">Vue</b> and <b class="blue-color">React</b> offers better performance and flexibility than <b class="red-color">Angular</b>.
+                                <b class="green-color">Vue</b> and react are more suited for light-weight applications and <b class="red-color">Angular</b> is the best for large UI applications.
+                                <b class="red-color">Angular</b> is highly opinionated and unlike <b class="green-color">Vue</b> and <b class="blue-color">React</b>, it offers everything
+                                    from routing, templates to testing utilities in its package.
+                                    <br> <br>
+                                    
+                            </p>
+                            <p class="small-p">So in most cases the choice of frameworks depends on the complexity and size of the application</p>
+                        </div>
+            </section>
+            
+            </section>
+            <section>
+                    <div class="slide--block">
+                        <h1>thanks for the watching!</h1>
+                    </section>
+            </section>
     </div>
 </div>
 
